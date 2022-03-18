@@ -475,6 +475,11 @@
     "@vue/compiler-dom" "3.2.31"
     "@vue/shared" "3.2.31"
 
+"@vue/devtools-api@^6.0.0":
+  version "6.1.3"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.1.3.tgz#a44c52e8fa6d22f84db3abdcdd0be5135b7dd7cf"
+  integrity sha512-79InfO2xHv+WHIrH1bHXQUiQD/wMls9qBk6WVwGCbdwP7/3zINtvqPNMtmSHXsIKjvUAHc8L0ouOj6ZQQRmcXg==
+
 "@vue/reactivity-transform@3.2.31":
   version "3.2.31"
   resolved "https://registry.npmmirror.com/@vue/reactivity-transform/-/reactivity-transform-3.2.31.tgz#0f5b25c24e70edab2b613d5305c465b50fc00911"
@@ -618,11 +623,6 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
-
-body-scroll-lock@^2.6.1:
-  version "2.7.1"
-  resolved "https://registry.npmmirror.com/body-scroll-lock/-/body-scroll-lock-2.7.1.tgz#caf3f9c91773af1ffb684cd66ed9137b5b737014"
-  integrity sha512-hS53SQ8RhM0e4DsQ3PKz6Gr2O7Kpdh59TWU98GHjaQznL7y4dFycEPk7pFQAikqBaUSCArkc5E3pe7CWIt2fZA==
 
 boxen@^3.0.0:
   version "3.2.0"
@@ -852,11 +852,6 @@ currently-unhandled@^0.4.1:
   integrity sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==
   dependencies:
     array-find-index "^1.0.1"
-
-dayjs@^1.8.2:
-  version "1.11.0"
-  resolved "https://registry.npmmirror.com/dayjs/-/dayjs-1.11.0.tgz#009bf7ef2e2ea2d5db2e6583d2d39a4b5061e805"
-  integrity sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==
 
 debug@^3.1.0:
   version "3.2.7"
@@ -1707,11 +1702,6 @@ jstransformer@1.0.0:
     is-promise "^2.0.0"
     promise "^7.0.1"
 
-keycode@^2.1.9:
-  version "2.2.1"
-  resolved "https://registry.npmmirror.com/keycode/-/keycode-2.2.1.tgz#09c23b2be0611d26117ea2501c2c391a01f39eff"
-  integrity sha512-Rdgz9Hl9Iv4QKi8b0OlCRQEzp4AgVxyCtz5S/+VIHezDmrDhkp2N2TqBWOLz0/gbeREXOOiI9/4b8BY9uw2vFg==
-
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmmirror.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
@@ -1836,6 +1826,29 @@ map-obj@^4.0.0:
   resolved "https://registry.npmmirror.com/map-obj/-/map-obj-4.3.0.tgz#9304f906e93faae70880da102a9f1df0ea8bb05a"
   integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
 
+mdn-polyfills@^5.20.0:
+  version "5.20.0"
+  resolved "https://registry.npmmirror.com/mdn-polyfills/-/mdn-polyfills-5.20.0.tgz#ca8247edf20a4f60dec6804372229812b348260b"
+  integrity sha512-AbTv1ytcoOUAkxw6u5oo2QPf27kEZgxBAQr49jFb4i2VnTnFGfJbcIQ9UDBOdfNECeXsgkYFwB2BkdeTfOzztw==
+
+mdui.jq@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmmirror.com/mdui.jq/-/mdui.jq-2.0.1.tgz#8c7ce143680ea2a8fa7511675dd0eca6fa57c1d5"
+  integrity sha512-BNT4q/4gAqDYVNUVHmYoJoIu04Rmz0Ow0j38VwZgIahWphpyDdOxReQZzMUGDizXZUJ0+r+JpdKVxKMVP27VAg==
+  dependencies:
+    mdn-polyfills "^5.20.0"
+    promise-polyfill "^8.2.0"
+
+mdui@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/mdui/-/mdui-1.0.2.tgz#c299320cb9f3c582cdc9977883ae1cce70fd61b2"
+  integrity sha512-LIaDjVjzyPY8PUjlhCXiE4mOXinh+jv38H/zsrR00/Y9OWzdncPlvir3mzZGuxT4sh9rHOrh06zfsOPoBjIhzA==
+  dependencies:
+    mdn-polyfills "^5.20.0"
+    mdui.jq "^2.0.1"
+    normalize.css "^8.0.1"
+    promise-polyfill "^8.2.0"
+
 meow@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmmirror.com/meow/-/meow-5.0.0.tgz#dfc73d63a9afc714a5e371760eb5c88b91078aa4"
@@ -1925,17 +1938,6 @@ ms@^2.1.1:
   resolved "https://registry.npmmirror.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-muse-ui@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmmirror.com/muse-ui/-/muse-ui-3.0.2.tgz#f292e8a063d625d35b1dce1b1504bc0cccd78e65"
-  integrity sha512-oIH8wEKQqXA6xbb3HzprxC2xoF7P8G01uvF+Jhs6VtbxQjO7VVkKKFu2Mb2NmhX3mMU2EBCgE8wlTU29ffjkPA==
-  dependencies:
-    body-scroll-lock "^2.6.1"
-    dayjs "^1.8.2"
-    keycode "^2.1.9"
-    normalize-wheel "^1.0.1"
-    resize-observer-polyfill "^1.5.0"
-
 nanoid@^3.3.1:
   version "3.3.1"
   resolved "https://registry.npmmirror.com/nanoid/-/nanoid-3.3.1.tgz#6347a18cac88af88f58af0b3594b723d5e99bb35"
@@ -1956,10 +1958,10 @@ normalize-url@^4.1.0:
   resolved "https://registry.npmmirror.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
   integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
-normalize-wheel@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmmirror.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
-  integrity sha512-1OnlAPZ3zgrk8B91HyRj+eVv+kS5u+Z0SCsak6Xil/kmgEia50ga7zfkumayonZrImffAxPU/5WcyGhzetHNPA==
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.npmmirror.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
 npm-prefix@^1.2.0:
   version "1.2.0"
@@ -2157,6 +2159,11 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+promise-polyfill@^8.2.0:
+  version "8.2.3"
+  resolved "https://registry.npmmirror.com/promise-polyfill/-/promise-polyfill-8.2.3.tgz#2edc7e4b81aff781c88a0d577e5fe9da822107c6"
+  integrity sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==
 
 promise@^7.0.1:
   version "7.3.1"
@@ -2415,11 +2422,6 @@ replace-ext@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
   integrity sha512-vuNYXC7gG7IeVNBC1xUllqCcZKRbJoSPOBhnTEcAIiKCsbuef6zO3F0Rve3isPMMoNoQRWjQwbAgAjHUHniyEA==
-
-resize-observer-polyfill@^1.5.0:
-  version "1.5.1"
-  resolved "https://registry.npmmirror.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
-  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-from@^5.0.0:
   version "5.0.0"
@@ -3136,6 +3138,13 @@ vscode-uri@^3.0.2, vscode-uri@^3.0.3:
   version "3.0.3"
   resolved "https://registry.npmmirror.com/vscode-uri/-/vscode-uri-3.0.3.tgz#a95c1ce2e6f41b7549f86279d19f47951e4f4d84"
   integrity sha512-EcswR2S8bpR7fD0YPeS7r2xXExrScVMxg4MedACaWHEtx9ftCF/qHG1xGkolzTPcEmjTavCQgbVzHUIdTMzFGA==
+
+vue-router@^4.0.14:
+  version "4.0.14"
+  resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.0.14.tgz#ce2028c1c5c33e30c7287950c973f397fce1bd65"
+  integrity sha512-wAO6zF9zxA3u+7AkMPqw9LjoUCjSxfFvINQj3E/DceTt6uEz1XZLraDhdg2EYmvVwTBSGlLYsUw8bDmx0754Mw==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0"
 
 vue@^3.2.25:
   version "3.2.31"

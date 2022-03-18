@@ -6,6 +6,16 @@ defineProps<{ msg: string }>()
 const count = ref(0)
 </script>
 
+<script lang="ts">
+export default {
+  beforeMount() {
+    if(!localStorage["username"]) {
+      this.$router.push("/login");
+    }
+  }
+}
+</script>
+
 <template>
   <h1>{{ msg }}</h1>
 
