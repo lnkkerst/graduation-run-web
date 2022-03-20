@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "mdui": "^1.0.2",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
@@ -17,7 +18,9 @@
     "@vitejs/plugin-vue": "^2.2.0",
     "@volar/vue-language-service": "^0.33.2",
     "typescript": "^4.5.4",
-    "vite": "^2.8.0"
+    "vfile-message": "^3.1.2",
+    "vite": "^2.8.0",
+    "vue-tsc": "^0.33.2-patch.1"
   },
   "description": "山东大学毕业跑活动报名前端",
   "author": "lnkkerst",

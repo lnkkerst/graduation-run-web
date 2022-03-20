@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
 import SignUp from "./components/SignUp.vue";
+import Person from "./components/Person.vue";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -23,7 +24,11 @@ const routes: RouteRecordRaw[] = [
         path: "/signup",
         name: "signup",
         component: SignUp
-
+    },
+    {
+        path: "/personal",
+        name: "personal",
+        component: Person
     }
 ];
 
