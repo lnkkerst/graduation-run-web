@@ -15,7 +15,6 @@ import router from "./router";
 export default {
   data() {
     return {
-      isNightMode: false
     }
   },
   mounted() {
@@ -54,7 +53,7 @@ export default {
 </script>
 
 <template>
-  <AppBar site-name="毕业跑" page-title="主页">
+  <AppBar site-name="毕业跑" page-title="主页" mdui-fixed>
     <MduiButton
       @click="$mdui.snackbar('这个按钮目前还没有什么用', { buttonText: '好吧' })"
       mdui-icon
@@ -63,7 +62,7 @@ export default {
     <MduiButton
       @click="$mdui.snackbar('这个功能目前还在画大饼', { buttonText: '知道啦' })"
       mdui-icon
-      :mdui-icon-name="isNightMode ? 'brightness_2' : 'brightness_7'"
+      mdui-icon-name="color_lens"
     ></MduiButton>
   </AppBar>
   <Drawer id="drawer">

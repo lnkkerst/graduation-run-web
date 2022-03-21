@@ -130,7 +130,7 @@ export default {
                     <input v-model.lazy="captcha" class="mdui-textfield-input" type="text" required />
                     <div class="mdui-textfield-error">请输入验证码</div>
                 </div>
-                <div v-html="captchaSvg" @click="changeCaptcha" class="mdui-col-xs-6"></div>
+                <div v-html="captchaSvg" @click.prevent="changeCaptcha" class="mdui-col-xs-6"></div>
             </div>
             <div id="login-action" class="mdui-valign mdui-center mdui-col">
                 <button

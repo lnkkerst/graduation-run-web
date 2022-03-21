@@ -14,6 +14,7 @@ let isRaised = props.mduiRaised;
 let isIcon = props.mduiIcon;
 let isDense = props.mduiRaised;
 let iconName = props.mduiIconName;
+let isBlock = props.mduiBlock;
 
 </script>
 
@@ -29,7 +30,8 @@ export default {
         :class="[
             { 'mdui-btn-raised': isRaised },
             { 'mdui-btn-icon': isIcon },
-            { 'mdui-btn-dense': isDense }
+            { 'mdui-btn-dense': isDense },
+            { 'mdui-btn-block': isBlock }
         ]"
     >
         <Icon v-if="iconName">{{ iconName }}</Icon>

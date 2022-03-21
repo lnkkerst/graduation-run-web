@@ -2,7 +2,7 @@
 </script>
 
 <template>
-<div class="mdui-drawer">
+<div class="mdui-drawer mdui-shadow-8">
     <slot></slot>
 </div>
 </template>

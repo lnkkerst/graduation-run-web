@@ -15,17 +15,17 @@ let title = props.pageTitle;
 </script>
 
 <template>
-  <div class="mdui-appbar mdui-color-theme" :class="[{ 'mdui-appbar-fixed': fixed }]">
-    <div class="mdui-toolbar">
+  <header class="mdui-appbar" :class="[{ 'mdui-appbar-fixed': fixed }]">
+    <div class="mdui-toolbar mdui-color-theme">
       <Button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">menu</i>
       </Button>
-      <a v-if="siteName" class="mdui-typo-headline" @click="$router.push('/')">{{ siteName }}</a>
+      <a v-if="siteName" class="mdui-typo-headline" @click.prevent="$router.push('/')">{{ siteName }}</a>
       <a v-if="title" class="mdui-typo-title">{{ title }}</a>
       <div class="mdui-toolbar-spacer"></div>
       <slot></slot>
     </div>
-  </div>
+  </header>
 </template>
 
 <style scoped>

@@ -44,17 +44,17 @@ export default {
 </script>
 
 <template>
-  <div class="mdui-card mdui-shadow-16" id="notice-card">
+  <div class="mdui-card mdui-center mdui-shadow-16" id="notice-card">
     <div class="mdui-typo mdui-card-content">
       <p v-for="line in notice" class="mdui-typo-body-1">{{ line }}</p>
     </div>
   </div>
-  <div class="mdui-row" id="home-button-box">
+  <div class="mdui-row mdui-center" id="home-button-box">
     <div class="mdui-col-xs-6 mdui-valign">
-      <MduiButton @click="$router.push('/signup')" class="mdui-color-theme mdui-center">前往报名页面</MduiButton>
+      <MduiButton @click.prevent="$router.push('/signup')" class="mdui-color-theme mdui-center">前往报名页面</MduiButton>
     </div>
     <div class="mdui-col-xs-6 mdui-valign">
-      <MduiButton @click="logout" class="mdui-color-theme mdui-center">退出报名系统</MduiButton>
+      <MduiButton @click.prevent="logout" class="mdui-color-theme mdui-center">退出报名系统</MduiButton>
     </div>
   </div>
 </template>
@@ -62,9 +62,11 @@ export default {
 <style scoped>
 #notice-card {
   margin-top: 4%;
+  max-width: 640px;
 }
 #home-button-box {
   margin-top: 6%;
   margin-bottom: 10%;
+  max-width: 640px;
 }
 </style>
