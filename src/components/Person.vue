@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import axios from "axios";
 import MduiButton from "./mdItems/Button.vue";
 </script>
 
@@ -33,15 +34,45 @@ export default {
                 "L",
                 "XL",
                 "XXL"
-            ]
+            ],
+            logging: false
         }
     },
     mounted() {
         this.$mdui.mutation();
+        this.fetchPersonal();
     },
     methods: {
-        updatePersonal() {
-            this.$mdui.alert(JSON.stringify(this.form));
+        async updatePersonal() {
+            this.logging = true;
+            const res = await this.$axios.post("/user/info", this.form);
+            if (res.data.code !== 0) {
+                this.$mdui.alert(res.data.data.msg, "警告", undefined, {
+                    confirmText: "确定"
+                });
+            }
+            else {
+                this.$mdui.snackbar("更新成功", {
+                    buttonText: "确定"
+                });
+                this.fetchPersonal();
+            }
+            this.logging = false;
+        },
+        async fetchPersonal() {
+            try {
+                const res = await this.$axios.get("/user/info");
+                this.form = res.data.data.form;
+            } catch (_e) {
+                this.$mdui.alert("获取个人信息失败", "警告", undefined, {
+                    confirmText: "确定"
+                })
+                const e = _e as Error;
+                if (import.meta.env.DEV) {
+                    console.log(e.message);
+                }
+            }
+
         }
     }
 }
@@ -89,13 +120,13 @@ export default {
             <div class="mdui-row mdui-m-y-4 mdui-valign">
                 <span class="mdui-col-xs-4 mdui-typo-subheading">性别：</span>
                 <label class="mdui-radio mdui-col-xs-4">
-                    <input v-model="form.sex" type="radio" name="group1" />
+                    <input v-model="form.sex" value="男" type="radio" />
                     <i class="mdui-radio-icon"></i>
                     男
                 </label>
 
                 <label class="mdui-radio mdui-col-xs-4">
-                    <input v-model="form.sex" type="radio" name="group1" />
+                    <input v-model="form.sex" value="女" type="radio" />
                     <i class="mdui-radio-icon"></i>
                     女
                 </label>
@@ -168,12 +199,16 @@ export default {
                 </div>
             </div>
             <div class="mdui-divider mdui-m-y-2"></div>
-            <div class="mdui-card-actions">
+            <div id="update-action" class="mdui-valign mdui-center mdui-card-actions">
                 <MduiButton
-                    mdui-block
+                    v-if="!logging"
                     @click.prevent="updatePersonal"
                     class="mdui-color-theme"
+                    mdui-block
                 >更新个人信息</MduiButton>
+                <div class="mdui-progress" v-if="logging">
+                    <div class="mdui-progress-indeterminate"></div>
+                </div>
             </div>
         </div>
     </form>
@@ -182,5 +217,9 @@ export default {
 <style>
 #personal-card {
     max-width: 640px;
+}
+
+#update-action {
+    height: 64px;
 }
 </style>

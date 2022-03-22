@@ -154,10 +154,6 @@ export default {
     width: 80%;
 }
 
-.login-form {
-    margin: 10px;
-}
-
 #login-form {
     padding: 0 24px 16px 16px;
 }
