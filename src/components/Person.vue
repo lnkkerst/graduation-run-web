@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import axios from "axios";
 import MduiButton from "./mdItems/Button.vue";
+import { defineComponent } from "vue";
 </script>
 
 <script lang="ts">
-export default {
+export default defineComponent({
     data() {
         return {
             form: {
@@ -75,7 +76,7 @@ export default {
 
         }
     }
-}
+});
 </script>
 
 <template>

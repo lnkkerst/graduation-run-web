@@ -1,4 +1,5 @@
-<script setup lang="ts">import router from '../../router';
+<script setup lang="ts">
+import router from '../../router';
 const props = defineProps<{
   mduiFixed?: boolean;
   drawerTaget?: string;
@@ -20,7 +21,11 @@ let title = props.pageTitle;
       <Button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">menu</i>
       </Button>
-      <a v-if="siteName" class="mdui-typo-headline" @click.prevent="$router.push('/')">{{ siteName }}</a>
+      <a
+        v-if="siteName"
+        class="mdui-typo-headline"
+        @click.prevent="$router.push('/')"
+      >{{ siteName }}</a>
       <a v-if="title" class="mdui-typo-title">{{ title }}</a>
       <div class="mdui-toolbar-spacer"></div>
       <slot></slot>

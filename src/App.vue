@@ -9,10 +9,11 @@ import Icon from "./components/mdItems/Icon.vue";
 import ListItemContent from "./components/mdItems/ListItemContent.vue";
 import axios from "axios";
 import router from "./router";
+import { defineComponent } from "vue";
 </script>
 
 <script lang="ts">
-export default {
+export default defineComponent({
   data() {
     return {
     }
@@ -49,7 +50,7 @@ export default {
       this.$router.push("/login");
     }
   },
-}
+});
 </script>
 
 <template>

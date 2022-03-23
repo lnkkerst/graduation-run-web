@@ -2,10 +2,12 @@
 import router from "../router";
 import Button from "./mdItems/Button.vue";
 import Icon from "./mdItems/Icon.vue";
+import { defineComponent } from "vue";
 </script>
 
 <script lang="ts">
-export default {
+
+export default defineComponent({
     data() {
         return {
             isPassswdVaild: true,
@@ -18,7 +20,7 @@ export default {
     },
     methods: {
         async login() {
-            if (this.username.length == 0) {
+            if (this.$data.username.length == 0) {
                 this.$mdui.alert("请输入用户名", "提示", undefined, {
                     "confirmText": "确定"
                 });
@@ -38,7 +40,7 @@ export default {
                 this.logging = true;
                 try {
                     const res = await this.$axios.post("/auth/user", {
-                        username: this.username,
+                        username: this.$data.username,
                         password: this.password,
                         captcha: this.captcha,
                         uuid: localStorage.getItem("uuid")
@@ -94,7 +96,7 @@ export default {
         this.changeCaptcha();
         
     }
-}
+});
 </script>
 
 <template>

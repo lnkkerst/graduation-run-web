@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Icon from "./Icon.vue";
+import { defineComponent } from "vue";
 
 const props = defineProps<{
     content?: string;
@@ -19,9 +20,9 @@ let isBlock = props.mduiBlock;
 </script>
 
 <script lang="ts">
-export default {
-
-}
+export default defineComponent({
+    
+})
 </script>
 
 <template>

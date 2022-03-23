@@ -20,7 +20,7 @@ declare module "@vue/runtime-core" {
 const app = createApp(App);
 app.config.globalProperties.$mdui = mdui;
 app.config.globalProperties.$jq = mdui.$;
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://api.lnkkerst.me/gr";
 axios.interceptors.request.use(function (config) {
     const token = localStorage.getItem('token');
     if (token !== null) {

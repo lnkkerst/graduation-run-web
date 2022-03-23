@@ -3,10 +3,11 @@ import { rmSync } from "fs";
 import { withCtx } from "vue";
 import router from "../router";
 import MduiButton from "./mdItems/Button.vue";
+import { defineComponent } from "vue";
 </script>
 
 <script lang="ts">
-export default {
+export default defineComponent({
     data() {
         return {
             signup: false,
@@ -67,7 +68,7 @@ export default {
     mounted() {
         this.fetchPersonal();
     }
-}
+});
 </script>
 
 <template>

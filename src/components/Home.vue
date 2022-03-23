@@ -2,10 +2,11 @@
 import mdui from "mdui";
 import router from "../router";
 import MduiButton from "./mdItems/Button.vue";
+import { defineComponent } from "vue";
 </script>
 
 <script lang="ts">
-export default {
+export default defineComponent({
   data() {
     return {
       notice: `1.此次活动为4公里长跑个人赛，全校师生均可以个人为单位参加此次毕业跑的活动。
@@ -40,7 +41,7 @@ export default {
   mounted() {
     this.$mdui.mutation();
   }
-}
+});
 </script>
 
 <template>
