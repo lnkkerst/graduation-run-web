@@ -2,7 +2,8 @@
 import mdui from "mdui";
 import router from "../router";
 import MduiButton from "./mdItems/Button.vue";
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
+
 </script>
 
 <script lang="ts">
@@ -52,7 +53,10 @@ export default defineComponent({
   </div>
   <div class="mdui-row mdui-center" id="home-button-box">
     <div class="mdui-col-xs-6 mdui-valign">
-      <MduiButton @click.prevent="$router.push('/signup')" class="mdui-color-theme mdui-center">前往报名页面</MduiButton>
+      <MduiButton
+        @click.prevent="$router.push('/signup')"
+        class="mdui-color-theme mdui-center"
+      >前往报名页面</MduiButton>
     </div>
     <div class="mdui-col-xs-6 mdui-valign">
       <MduiButton @click.prevent="logout" class="mdui-color-theme mdui-center">退出报名系统</MduiButton>

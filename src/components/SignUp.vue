@@ -11,19 +11,18 @@ export default defineComponent({
     data() {
         return {
             signup: false,
-            changing: false
+            changing: false,
+            text4Button2: "正在查询是否报名..."
         }
     },
     computed: {
-        text4Button2() {
-            return this.signup ? "已经报名，点击取消" : "未报名，点击报名"
-        }
     },
     methods: {
         async fetchPersonal() {
             try {
                 const res = await this.$axios.get("/user/info");
                 this.signup = res.data.data.form.signup;
+                this.updateSignUpInfo();
             } catch (_e) {
                 this.$mdui.alert("获取个人信息失败", "警告", undefined, {
                     confirmText: "确定"
@@ -33,6 +32,9 @@ export default defineComponent({
                     console.log(e.message);
                 }
             }
+        },
+        updateSignUpInfo() {
+            this.text4Button2 = this.signup ? "已经报名，点击取消报名" : "未报名，点击报名";
         },
         async change() {
             try {
@@ -65,15 +67,16 @@ export default defineComponent({
             }
         }
     },
-    mounted() {
-        this.fetchPersonal();
+    watch: {
+    },
+    async mounted() {
+        await this.fetchPersonal();
+        this.updateSignUpInfo();
     }
 });
 </script>
 
 <template>
-    <!-- <div class="mdui-card mdui-m-t-4" id="signup-card"> -->
-    <!-- <div class="mdui-card-action"> -->
     <MduiButton
         class="mdui-m-y-4 mdui-color-theme"
         mdui-block
@@ -90,8 +93,6 @@ export default defineComponent({
             <div class="mdui-progress-indeterminate"></div>
         </div>
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
 </template>
 
 <style>

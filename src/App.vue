@@ -28,24 +28,10 @@ export default defineComponent({
         this.$router.push("/login");
       }
     })
-    // if (localStorage.getItem("uuid") === null) {
-    //   try {
-    //     const res = await axios.get("/auth/uuid");
-    //     localStorage.setItem("uuid", res.data.data.uuid);
-    //   } catch (_e) {
-    //     const e = _e as Error;
-    //     this.$mdui.alert("与服务器通信异常", "警告", undefined, {
-    //       confirmText: "确定"
-    //     });
-    //     if (import.meta.env.DEV) {
-    //       console.log(e.message);
-    //     }
-    //   }
-    // }
   },
   methods: {
     onTokenFailed() {
-      localStorage.clear();
+      localStorage.removeItem("token");
       this.$mdui.snackbar("登陆信息失效", { buttonText: "确定" });
       this.$router.push("/login");
     }
