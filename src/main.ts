@@ -21,6 +21,7 @@ const app = createApp(App);
 app.config.globalProperties.$mdui = mdui;
 app.config.globalProperties.$jq = mdui.$;
 axios.defaults.baseURL = import.meta.env.VITE_API_ADDRESS as string;
+
 axios.interceptors.request.use(function (config) {
     const token = localStorage.getItem('token');
     if (token !== null) {
@@ -32,16 +33,19 @@ axios.interceptors.request.use(function (config) {
         return Promise.reject(error);
     }
 );
-axios.interceptors.response.use(function (res) {
-    if(res.status === 401) {
+
+axios.interceptors.response.use(function (res) { return res }, function (err) {
+    if (err.response.status === 401) {
+        localStorage.clear();
         mdui.snackbar("登陆过期，请重新登陆", {
             buttonText: "确定",
             timeout: 10000
-        })
+        });
         router.push("/login");
-    }
-    return res;
+    };
+    return Promise.reject(err);
 });
+
 app.config.globalProperties.$axios = axios;
 app.use(router);
 app.mount("#app");

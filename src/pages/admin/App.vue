@@ -53,7 +53,11 @@ export default defineComponent({
             </ListItem>
             <ListItem @click="$router.push('/info')" class="mdui-ripple">
                 <Icon class="mdui-list-item-icon">person</Icon>
-                <ListItemContent>报名信息管理</ListItemContent>
+                <ListItemContent>报名信息查看</ListItemContent>
+            </ListItem>
+            <ListItem @click="$router.push('/export')" class="mdui-ripple">
+                <Icon class="mdui-list-item-icon">assignment</Icon>
+                <ListItemContent>报名信息导出</ListItemContent>
             </ListItem>
         </List>
     </Drawer>
