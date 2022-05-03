@@ -7,7 +7,7 @@ import "@vue/runtime-core";
 import { JQStatic } from 'mdui.jq/es/interfaces/JQStatic';
 import { MduiStatic } from 'mdui/es/interfaces/MduiStatic';
 import { AxiosInstance } from "axios";
-import axios from "axios";
+import axiosRoot from "axios";
 
 declare module "@vue/runtime-core" {
     interface ComponentCustomProperties {
@@ -20,21 +20,23 @@ declare module "@vue/runtime-core" {
 const app = createApp(App);
 app.config.globalProperties.$mdui = mdui;
 app.config.globalProperties.$jq = mdui.$;
+
+const axios = axiosRoot.create();
 axios.defaults.baseURL = import.meta.env.VITE_API_ADDRESS as string;
 
-axios.interceptors.request.use(function (config) {
+axios.interceptors.request.use(function(config) {
     const token = localStorage.getItem('token');
     if (token !== null) {
         config.headers!.Authorization = `Bearer ${token}`;
     }
     return config;
 },
-    function (error) {
+    function(error) {
         return Promise.reject(error);
     }
 );
 
-axios.interceptors.response.use(function (res) { return res }, function (err) {
+axios.interceptors.response.use(function(res) { return res }, function(err) {
     if (err.response.status === 401) {
         localStorage.clear();
         mdui.snackbar("登陆过期，请重新登陆", {

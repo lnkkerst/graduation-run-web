@@ -20,8 +20,9 @@ declare module "@vue/runtime-core" {
 const app = createApp(App);
 app.config.globalProperties.$mdui = mdui;
 app.config.globalProperties.$jq = mdui.$;
-const axios = axiosRoot.create({});
-axios.defaults.baseURL = import.meta.env.VITE_API_ADDRESS as string;
+const axios = axiosRoot.create();
+// axios.defaults.baseURL = import.meta.env.VITE_API_ADDRESS as string;
+axios.defaults.baseURL = "https://api.lnkkerst.me/gr";
 
 axios.interceptors.request.use(function (config) {
     const token = localStorage.getItem('admin_token');
